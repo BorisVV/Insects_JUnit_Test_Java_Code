@@ -6,7 +6,7 @@ public class InsectManager {
 
     public static void main(String[] args) {
         //This the main and is calling the Insect class, then the insects to put the information for each insect.
-        //This is for the Butterfly insect and prints the data for each one.
+        //This is the Inset manager for the main method.
 
         // Create a LinkedList to add insects.
         ArrayList<Insect> insects = new ArrayList<>();
