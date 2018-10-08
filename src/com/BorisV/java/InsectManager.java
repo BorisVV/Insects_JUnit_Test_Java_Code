@@ -1,38 +1,35 @@
 package com.BorisV.java;
 
-        import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class InsectManager {
 
     public static void main(String[] args) {
         //This the main and is calling the Insect class, then the insects to put the information for each insect.
         //This is for the Butterfly insect and prints the data for each one.
-        Insect object = new Butterfly("Monarch", 4, "orange and black", "milkweed");
-        object.printSpeciesData();
-        Insect object2 = new Butterfly("Common Yellow Swallowtail", 4, "yellow and black", "parsley");
-        object2.printSpeciesData();
 
-        //Bee objects and prints the data for each insect.
-        Insect objBee1 = new Bee("Honey bee", "yellow and black", "Jasmine", 4);
-        objBee1.printSpeciesData();
-        Insect objBee2 = new Bee("Bumble bee", "yellow and black and white", "clover", 4);
-        objBee2.printSpeciesData();
+        // Create a LinkedList to add insects.
+        ArrayList<Insect> insects = new ArrayList<>();
 
+        // Add Butterflies.
+        Butterfly butterfly1 =  new Butterfly("Monarch", 4, "orange and black", "milkweed");
+        Butterfly butterfly2 =  new Butterfly("Common Yellow Swallowtail", 4, "yellow and black", "parsley");
 
-        System.out.println();
+        // Add Bees.
+        Bee bee1 = new Bee("Honey bee", 4,"yellow and black", "Jasmine");
+        Bee bee2 = new Bee("Bumble bee", 4,"yellow and black and white", "clover");
 
-        //This the LinkedList that stores each of the above object and then loops and prints out the data
-        //is basically the same as above with the difference that is all together in the array.
-        System.out.println("This is the LinkList print out");
-        LinkedList<Insect> insects = new LinkedList<>();
-        insects.add(object);
-        insects.add(object2);
-        insects.add(objBee1);
-        insects.add(objBee2);
+        insects.add(butterfly1); // Add Butterflies to the insects Array.
+        insects.add(butterfly2);
+
+        insects.add(bee1); // Add Bees to the insects Arrays.
+        insects.add(bee2);
+
+        System.out.println("This is the information...");
 
         //for enhance loop is used to call the Insects.
-        for (Insect i : insects) {
-            i.printSpeciesData(); //This prints all the data from the objects in the LinkedList.
+        for (Insect insect : insects) {
+            System.out.println(insect.toString()); //This prints all the data from the objects in the LinkedList.
         }
 
     }

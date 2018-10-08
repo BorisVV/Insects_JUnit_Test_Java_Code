@@ -1,44 +1,23 @@
 package com.BorisV.java;
 
 public class Bee extends Insect {
-    protected static String color;
-    protected static String favFlower;
 
-    public Bee(String name, String color, String favFlower, int numOfWings) {
-        super(name, numOfWings);
-        this.color = color;
-        this.favFlower = favFlower;
+    public Bee(String name, int numOfWings, String color, String favFlower) {
+        super(name, numOfWings, color, favFlower);
     }
 
-    public void printSpeciesData() {
-        System.out.println("Name = "+this.getName()+", color = "+getcolor()+", makes honey = "
-                +gethoney()+ ", favorite flower = "+getFavFlower()+
-                "number of wings = "+getNumOfWings());
-
-
+    // Display information about the insect.
+    @Override
+    public String toString() {
+        return
+                "Name = "+this.getName() + ", color = "+ getColor()+", makes honey = "
+                        + getHoney() + ", favorite flower = " + getFavFlower() +
+                        "number of wings = " + getNumOfWings();
     }
 
-    public boolean gethoney() {
-        if (this.getName().equalsIgnoreCase("honey bee")) {
-            return true;
-        }
-        else return false;
-    }
-
-
-    public static String getcolor() {
-        return color;
-    }
-
-    public static void setcolor(String color) {
-        Bee.color = color;
-    }
-
-    public static String getFavFlower() {
-        return favFlower;
-    }
-
-    public static void setFavFlower(String favFlower) {
-        Bee.favFlower = favFlower;
+    // Will return  true or false.
+    private boolean getHoney() {
+        return
+                this.getName().equalsIgnoreCase("honey bee");
     }
 }
